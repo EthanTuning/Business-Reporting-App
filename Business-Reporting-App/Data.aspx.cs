@@ -13,17 +13,29 @@ namespace Business_Reporting_App {
 
         protected void CustomerDataBtn_Click(object sender, EventArgs e) {
 
+            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "customer-modal", "$('#customer-modal').modal();", true);
+            CustomerUpdatePanel.Update();
+            
         }
 
         protected void InvoiceDataBtn_Click(object sender, EventArgs e) {
+
+            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "invoice-modal", "$('#invoice-modal').modal();", true);
+            CustomerUpdatePanel.Update();
 
         }
 
         protected void InventoryDataBtn_Click(object sender, EventArgs e) {
 
+            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "inventory-modal", "$('#inventory-modal').modal();", true);
+            CustomerUpdatePanel.Update();
+
         }
 
         protected void SupplierDataBtn_Click(object sender, EventArgs e) {
+
+            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "supplier-modal", "$('#supplier-modal').modal();", true);
+            CustomerUpdatePanel.Update();
 
         }
     }

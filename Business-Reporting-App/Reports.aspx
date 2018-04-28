@@ -25,7 +25,7 @@
                 <p><asp:Button ID="InventoryReportBtn" runat="server" CssClass="btn btn-default" Text="Go &raquo;" OnClick="InventoryReportBtn_Click" /></p>
             </div>
             <div class="col-sm-6">
-                <h2>Supplier</h2>
+                <h2>Supplier Report</h2>
                 <p>View all of your supplier's information or find a particular supplier's information.</p>
                 <p><asp:Button ID="SupplierReportBtn" runat="server" CssClass="btn btn-default" Text="Go &raquo;" OnClick="SupplierReportBtn_Click" /></p>
             </div>
