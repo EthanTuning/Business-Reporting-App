@@ -38,5 +38,57 @@ namespace Business_Reporting_App {
             CustomerUpdatePanel.Update();
 
         }
+
+        protected void AddCustomerBtn_Click(object sender, EventArgs e) {
+
+            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "customer-form-modal", "$('#customer-form-modal').modal();", true);
+            CustomerFormUpdatePanel.Update();
+
+        }
+
+        protected void AddInvoiceBtn_Click(object sender, EventArgs e) {
+
+            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "invoice-form-modal", "$('#invoice-form-modal').modal();", true);
+            InvoiceFormUpdatePanel.Update();
+
+        }
+
+        protected void AddInventoryBtn_Click(object sender, EventArgs e) {
+
+            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "inventory-form-modal", "$('#inventory-form-modal').modal();", true);
+            InventoryFormUpdatePanel.Update();
+
+        }
+
+        protected void AddSupplierBtn_Click(object sender, EventArgs e) {
+
+            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "supplier-form-modal", "$('#supplier-form-modal').modal();", true);
+            SupplierFormUpdatePanel.Update();
+
+        }
+
+        protected void AddCustomerSubmitBtn_Click(object sender, EventArgs e) {
+
+
+
+        }
+
+        protected void AddInvoiceSubmitBtn_Click(object sender, EventArgs e) {
+
+
+
+        }
+
+        protected void AddInventorySubmitBtn_Click(object sender, EventArgs e) {
+
+
+
+        }
+
+        protected void AddSupplierSubmitBtn_Click(object sender, EventArgs e) {
+
+
+
+        }
     }
 }

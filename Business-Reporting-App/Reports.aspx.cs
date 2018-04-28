@@ -13,17 +13,25 @@ namespace Business_Reporting_App {
 
         protected void CustomerReportBtn_Click(object sender, EventArgs e) {
 
+
+
         }
 
         protected void InvoiceReportBtn_Click(object sender, EventArgs e) {
+
+
 
         }
 
         protected void InventoryReportBtn_Click(object sender, EventArgs e) {
 
+
+
         }
 
         protected void SupplierReportBtn_Click(object sender, EventArgs e) {
+
+
 
         }
     }

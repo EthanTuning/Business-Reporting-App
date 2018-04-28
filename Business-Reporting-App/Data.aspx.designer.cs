@@ -85,6 +85,15 @@ namespace Business_Reporting_App {
         protected global::System.Web.UI.WebControls.Table CustomerTable;
         
         /// <summary>
+        /// AddCustomerBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button AddCustomerBtn;
+        
+        /// <summary>
         /// InvoiceUpdatePanel control.
         /// </summary>
         /// <remarks>
@@ -119,6 +128,15 @@ namespace Business_Reporting_App {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Table InvoiceTable;
+        
+        /// <summary>
+        /// AddInvoiceBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button AddInvoiceBtn;
         
         /// <summary>
         /// InventoryUpdatePanel control.
@@ -157,6 +175,15 @@ namespace Business_Reporting_App {
         protected global::System.Web.UI.WebControls.Table InventoryTable;
         
         /// <summary>
+        /// AddInventoryBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button AddInventoryBtn;
+        
+        /// <summary>
         /// SupplierUpdatePanel control.
         /// </summary>
         /// <remarks>
@@ -191,5 +218,284 @@ namespace Business_Reporting_App {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Table SupplierTable;
+        
+        /// <summary>
+        /// AddSupplierBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button AddSupplierBtn;
+        
+        /// <summary>
+        /// CustomerFormUpdatePanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel CustomerFormUpdatePanel;
+        
+        /// <summary>
+        /// CustomerFormModalTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label CustomerFormModalTitle;
+        
+        /// <summary>
+        /// CustomerCompanyInput control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox CustomerCompanyInput;
+        
+        /// <summary>
+        /// CustomerContactInput control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox CustomerContactInput;
+        
+        /// <summary>
+        /// CustomerPhoneInput control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox CustomerPhoneInput;
+        
+        /// <summary>
+        /// CustomerBillingInput control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox CustomerBillingInput;
+        
+        /// <summary>
+        /// CustomerShippingInput control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox CustomerShippingInput;
+        
+        /// <summary>
+        /// AddCustomerSubmitBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button AddCustomerSubmitBtn;
+        
+        /// <summary>
+        /// InvoiceFormUpdatePanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel InvoiceFormUpdatePanel;
+        
+        /// <summary>
+        /// InvoiceFormModalTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label InvoiceFormModalTitle;
+        
+        /// <summary>
+        /// InvoiceCustomerInput control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox InvoiceCustomerInput;
+        
+        /// <summary>
+        /// InvoiceOrderDatetInput control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox InvoiceOrderDatetInput;
+        
+        /// <summary>
+        /// InvoiceShippedDateInput control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox InvoiceShippedDateInput;
+        
+        /// <summary>
+        /// InvoiceStatusInput control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox InvoiceStatusInput;
+        
+        /// <summary>
+        /// AddInvoiceSubmitBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button AddInvoiceSubmitBtn;
+        
+        /// <summary>
+        /// InventoryFormUpdatePanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel InventoryFormUpdatePanel;
+        
+        /// <summary>
+        /// InventoryFormModalTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label InventoryFormModalTitle;
+        
+        /// <summary>
+        /// InventSKUInput control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox InventSKUInput;
+        
+        /// <summary>
+        /// InventDescInput control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox InventDescInput;
+        
+        /// <summary>
+        /// InventQOHInput control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox InventQOHInput;
+        
+        /// <summary>
+        /// InventSupllierIDInput control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox InventSupllierIDInput;
+        
+        /// <summary>
+        /// AddInventorySubmitBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button AddInventorySubmitBtn;
+        
+        /// <summary>
+        /// SupplierFormUpdatePanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel SupplierFormUpdatePanel;
+        
+        /// <summary>
+        /// SupplierFormModalTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label SupplierFormModalTitle;
+        
+        /// <summary>
+        /// SupplierCompanyInput control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox SupplierCompanyInput;
+        
+        /// <summary>
+        /// SupplierContactInput control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox SupplierContactInput;
+        
+        /// <summary>
+        /// SupplierPhoneInput control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox SupplierPhoneInput;
+        
+        /// <summary>
+        /// SupplierBillingInput control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox SupplierBillingInput;
+        
+        /// <summary>
+        /// SupplierShippingInput control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox SupplierShippingInput;
+        
+        /// <summary>
+        /// AddSupplierSubmitBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button AddSupplierSubmitBtn;
     }
 }
