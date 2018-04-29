@@ -76,13 +76,13 @@ namespace Business_Reporting_App {
         protected global::System.Web.UI.WebControls.Label CustomerModalLabel;
         
         /// <summary>
-        /// CustomerTable control.
+        /// CustomerDataTable control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table CustomerTable;
+        protected global::System.Web.UI.WebControls.GridView CustomerDataTable;
         
         /// <summary>
         /// AddCustomerBtn control.
@@ -121,13 +121,13 @@ namespace Business_Reporting_App {
         protected global::System.Web.UI.WebControls.Label InvoiceModalLabel;
         
         /// <summary>
-        /// InvoiceTable control.
+        /// InvoiceDataTable control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table InvoiceTable;
+        protected global::System.Web.UI.WebControls.GridView InvoiceDataTable;
         
         /// <summary>
         /// AddInvoiceBtn control.
@@ -166,13 +166,13 @@ namespace Business_Reporting_App {
         protected global::System.Web.UI.WebControls.Label InventoryModalLabel;
         
         /// <summary>
-        /// InventoryTable control.
+        /// InventoryDataTable control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table InventoryTable;
+        protected global::System.Web.UI.WebControls.GridView InventoryDataTable;
         
         /// <summary>
         /// AddInventoryBtn control.
@@ -211,13 +211,13 @@ namespace Business_Reporting_App {
         protected global::System.Web.UI.WebControls.Label SupplierModalLabel;
         
         /// <summary>
-        /// SupplierTable control.
+        /// SupplierDataTable control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table SupplierTable;
+        protected global::System.Web.UI.WebControls.GridView SupplierDataTable;
         
         /// <summary>
         /// AddSupplierBtn control.

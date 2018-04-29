@@ -44,17 +44,7 @@
                         </div>
                         <div class="modal-body">
                             <h5 class="modal-label-custom"><asp:Label ID="CustomerModalLabel" runat="server" Text="Edit Data"></asp:Label></h5>
-                            <asp:Table ID="CustomerTable" runat="server" CssClass="table">
-                                <asp:TableHeaderRow>
-                                    <asp:TableHeaderCell>Customer Number</asp:TableHeaderCell>
-                                    <asp:TableHeaderCell>Company</asp:TableHeaderCell>
-                                    <asp:TableHeaderCell>Contact</asp:TableHeaderCell>
-                                    <asp:TableHeaderCell>Phone</asp:TableHeaderCell>
-                                    <asp:TableHeaderCell>Billing Address</asp:TableHeaderCell>
-                                    <asp:TableHeaderCell>Shipping Address</asp:TableHeaderCell>
-                                    <asp:TableHeaderCell>Sales YTD</asp:TableHeaderCell>
-                                </asp:TableHeaderRow>
-                            </asp:Table>
+                            <asp:GridView ID="CustomerDataTable" runat="server" CssClass="table"></asp:GridView>
                             <div class="text-center">
                                 <asp:Button ID="AddCustomerBtn" CssClass="btn btn-default" runat="server" Text="Add" OnClick="AddCustomerBtn_Click" />
                             </div>
@@ -79,16 +69,7 @@
                         </div>
                         <div class="modal-body">
                             <h5 class="modal-label-custom"><asp:Label ID="InvoiceModalLabel" runat="server" Text=" Edit Data"></asp:Label></h5>
-                            <asp:Table ID="InvoiceTable" runat="server" CssClass="table">
-                                <asp:TableHeaderRow>
-                                    <asp:TableHeaderCell>Invoice Number</asp:TableHeaderCell>
-                                    <asp:TableHeaderCell>Customer Number</asp:TableHeaderCell>
-                                    <asp:TableHeaderCell>Order Date</asp:TableHeaderCell>
-                                    <asp:TableHeaderCell>Shipped Date</asp:TableHeaderCell>
-                                    <asp:TableHeaderCell>Total</asp:TableHeaderCell>
-                                    <asp:TableHeaderCell>Status</asp:TableHeaderCell>
-                                </asp:TableHeaderRow>
-                            </asp:Table>
+                            <asp:GridView ID="InvoiceDataTable" runat="server" CssClass="table"></asp:GridView>
                             <div class="text-center">
                                 <asp:Button ID="AddInvoiceBtn" CssClass="btn btn-default add-btn" runat="server" Text="Add" OnClick="AddInvoiceBtn_Click" />
                             </div>
@@ -113,16 +94,7 @@
                         </div>
                         <div class="modal-body">
                             <h5 class="modal-label-custom"><asp:Label ID="InventoryModalLabel" runat="server" Text="Edit Data"></asp:Label></h5>
-                            <asp:Table ID="InventoryTable" runat="server" CssClass="table">
-                                <asp:TableHeaderRow>
-                                    <asp:TableHeaderCell>SKU</asp:TableHeaderCell>
-                                    <asp:TableHeaderCell>Description</asp:TableHeaderCell>
-                                    <asp:TableHeaderCell>Quantity on Hand</asp:TableHeaderCell>
-                                    <asp:TableHeaderCell>Unit Weight</asp:TableHeaderCell>
-                                    <asp:TableHeaderCell>Unit Price</asp:TableHeaderCell>
-                                    <asp:TableHeaderCell>Supplier ID</asp:TableHeaderCell>
-                                </asp:TableHeaderRow>
-                            </asp:Table>
+                            <asp:GridView ID="InventoryDataTable" runat="server" CssClass="table"></asp:GridView>
                             <div class="text-center">
                                 <asp:Button ID="AddInventoryBtn" CssClass="btn btn-default add-btn" runat="server" Text="Add" OnClick="AddInventoryBtn_Click" />
                             </div>
@@ -147,16 +119,7 @@
                         </div>
                         <div class="modal-body">
                             <h5 class="modal-label-custom"><asp:Label ID="SupplierModalLabel" runat="server" Text="Edit Data"></asp:Label></h5>
-                            <asp:Table ID="SupplierTable" runat="server" CssClass="table">
-                                <asp:TableHeaderRow>
-                                    <asp:TableHeaderCell>Supplier ID</asp:TableHeaderCell>
-                                    <asp:TableHeaderCell>Company</asp:TableHeaderCell>
-                                    <asp:TableHeaderCell>Contact</asp:TableHeaderCell>
-                                    <asp:TableHeaderCell>Phone</asp:TableHeaderCell>
-                                    <asp:TableHeaderCell>Billing Address</asp:TableHeaderCell>
-                                    <asp:TableHeaderCell>Shipping Address</asp:TableHeaderCell>
-                                </asp:TableHeaderRow>
-                            </asp:Table>
+                            <asp:GridView ID="SupplierDataTable" runat="server" CssClass="table"></asp:GridView>
                             <div class="text-center">
                                 <asp:Button ID="AddSupplierBtn" CssClass="btn btn-default add-btn" runat="server" Text="Add" OnClick="AddSupplierBtn_Click" />
                             </div>

@@ -6,79 +6,118 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.OleDb;
 using System.Web.Configuration;
+using MySql.Data.MySqlClient;
+using System.Data;
+using System.Configuration;
 
 namespace Business_Reporting_App {
     public partial class About : Page {
-
         
-        private OleDbDataReader mInvoiceDataReader;
-        private OleDbDataReader mInventoryDataReader;
-        private OleDbDataReader mLineItemDataReader;
-        private OleDbDataReader mSupplierDataReader;
-        
-
-
         protected void Page_Load(object sender, EventArgs e) {
 
-            OleDbConnection connection;
-            OleDbCommand command;
-            OleDbDataReader customerDataReader;
-            string connectionPath;
-
-            if (IsPostBack == false) {
-
-                try {
-
-                    connection = new OleDbConnection();
-                    connectionPath = WebConfigurationManager.ConnectionStrings["Business-Reports-App-DB"].ConnectionString;
-                    connection.ConnectionString = connectionPath;
-                    connection.Open();
-                    command = new OleDbCommand("SELECT * FROM tblCustomer", connection);
-                    customerDataReader = command.ExecuteReader();
-
-                    while (customerDataReader.Read()) {
+            if (!IsPostBack) {
 
 
-                        TableRow tblRow = new TableRow();
-                        CustomerTable.Rows.Add(tblRow);
+                string connectionString = ConfigurationManager.ConnectionStrings["db-connection"].ConnectionString;
+                updateCustomerDataTable(connectionString);
+                updateInvoiceDataTable(connectionString);
+                updateInventoryDataTable(connectionString);
+                updateSupplierDataTable(connectionString);
 
-                        TableCell tblCell1 = new TableCell();
-                        tblCell1.Text = customerDataReader["CustNumber"].ToString();
-                        tblRow.Cells.Add(tblCell1);
+            }
 
-                        TableCell tblCell2 = new TableCell();
-                        tblCell2.Text = customerDataReader["Company"].ToString();
-                        tblRow.Cells.Add(tblCell2);
+        }
 
-                        TableCell tblCell3 = new TableCell();
-                        tblCell3.Text = customerDataReader["Billing Address"].ToString();
-                        tblRow.Cells.Add(tblCell3);
+        private void updateCustomerDataTable(string connectionString) {
 
-                        TableCell tblCell4 = new TableCell();
-                        tblCell4.Text = customerDataReader["Shipping Address"].ToString();
-                        tblRow.Cells.Add(tblCell4);
+            using (MySqlConnection connection = new MySqlConnection(connectionString)) {
 
-                        TableCell tblCell5 = new TableCell();
-                        tblCell3.Text = customerDataReader["Contact"].ToString();
-                        tblRow.Cells.Add(tblCell5);
+                using (MySqlCommand command = new MySqlCommand("SELECT * FROM customer")) {
 
-                        TableCell tblCell6 = new TableCell();
-                        tblCell6.Text = customerDataReader["Phone"].ToString();
-                        tblRow.Cells.Add(tblCell6);
+                    using (MySqlDataAdapter customerDataAdapter = new MySqlDataAdapter()) {
 
-                        TableCell tblCell7 = new TableCell();
-                        tblCell7.Text = customerDataReader["SalesYTD"].ToString();
-                        tblRow.Cells.Add(tblCell7);
+                        command.Connection = connection;
+                        customerDataAdapter.SelectCommand = command;
 
+                        using (DataTable table = new DataTable()) {
+
+                            customerDataAdapter.Fill(table);
+                            CustomerDataTable.DataSource = table;
+                            CustomerDataTable.DataBind();
+
+                        }
                     }
-
-                    //customerDataReader.Close();
-                    //connection.Close();
                 }
-                catch (Exception err) {
+            }
 
-                    Console.WriteLine(err.Message);
+        }
 
+        private void updateInvoiceDataTable(string connectionString) {
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString)) {
+
+                using (MySqlCommand command = new MySqlCommand("SELECT * FROM invoice")) {
+
+                    using (MySqlDataAdapter invoiceDataAdapter = new MySqlDataAdapter()) {
+
+                        command.Connection = connection;
+                        invoiceDataAdapter.SelectCommand = command;
+
+                        using (DataTable table = new DataTable()) {
+
+                            invoiceDataAdapter.Fill(table);
+                            InvoiceDataTable.DataSource = table;
+                            InvoiceDataTable.DataBind();
+
+                        }
+                    }
+                }
+            }
+        }
+
+        private void updateInventoryDataTable(string connectionString) {
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString)) {
+
+                using (MySqlCommand command = new MySqlCommand("SELECT * FROM inventory")) {
+
+                    using (MySqlDataAdapter inventoryDataAdapter = new MySqlDataAdapter()) {
+
+                        command.Connection = connection;
+                        inventoryDataAdapter.SelectCommand = command;
+
+                        using (DataTable table = new DataTable()) {
+
+                            inventoryDataAdapter.Fill(table);
+                            InventoryDataTable.DataSource = table;
+                            InventoryDataTable.DataBind();
+
+                        }
+                    }
+                }
+            }
+
+        }
+
+        private void updateSupplierDataTable(string connectionString) {
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString)) {
+
+                using (MySqlCommand command = new MySqlCommand("SELECT * FROM supplier")) {
+
+                    using (MySqlDataAdapter supplierDataAdapter = new MySqlDataAdapter()) {
+
+                        command.Connection = connection;
+                        supplierDataAdapter.SelectCommand = command;
+
+                        using (DataTable table = new DataTable()) {
+
+                            supplierDataAdapter.Fill(table);
+                            SupplierDataTable.DataSource = table;
+                            SupplierDataTable.DataBind();
+
+                        }
+                    }
                 }
             }
 
@@ -88,8 +127,6 @@ namespace Business_Reporting_App {
 
             ScriptManager.RegisterStartupScript(Page, Page.GetType(), "customer-modal", "$('#customer-modal').modal();", true);
             CustomerUpdatePanel.Update();
-
-
 
         }
 
