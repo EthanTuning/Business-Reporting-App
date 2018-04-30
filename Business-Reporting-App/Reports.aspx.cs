@@ -13,9 +13,19 @@ using iTextSharp.text.html.simpleparser;
 using System.IO;
 
 namespace Business_Reporting_App {
+
     public partial class Contact : Page {
+
         protected void Page_Load(object sender, EventArgs e) {
 
+            ScriptManager.GetCurrent(Page).RegisterPostBackControl(RunAllCustomerReportBtn);
+            ScriptManager.GetCurrent(Page).RegisterPostBackControl(RunAllInvoiceReportBtn);
+            ScriptManager.GetCurrent(Page).RegisterPostBackControl(RunAllInventoryReportBtn);
+            ScriptManager.GetCurrent(Page).RegisterPostBackControl(RunAllSupplierReportBtn);
+            //ScriptManager.GetCurrent(Page).RegisterPostBackControl(RunSingleCustomerReportBtn);
+            //ScriptManager.GetCurrent(Page).RegisterPostBackControl(RunSingleInvoiceReportBtn);
+            //ScriptManager.GetCurrent(Page).RegisterPostBackControl(RunSingleInventoryReportBtn);
+            //ScriptManager.GetCurrent(Page).RegisterPostBackControl(RunSingleSupplierReportBtn);
             UpdateCustomerDataTable();
             UpdateInvoiceDataTable();
             UpdateInventoryDataTable();
@@ -26,6 +36,27 @@ namespace Business_Reporting_App {
         public override void VerifyRenderingInServerForm(Control control) {
 
             /* Verifies that the control is rendered */
+
+        }
+
+        private void ExportPDF (Control view) {
+
+            Response.ContentType = "application/pdf";
+            Response.AddHeader("content-disposition", "attachment;filename=All_Customers_Report.pdf");
+            Response.Cache.SetCacheability(HttpCacheability.NoCache);
+            StringWriter sw = new StringWriter();
+            HtmlTextWriter hw = new HtmlTextWriter(sw);
+            view.RenderControl(hw);
+            StringReader sr = new StringReader(sw.ToString());
+            Document document = new Document(PageSize.A4, 10f, 10f, 10f, 0f);
+            HTMLWorker htmlWorker = new HTMLWorker(document);
+            PdfWriter.GetInstance(document, Response.OutputStream);
+            document.Open();
+            htmlWorker.Parse(sr);
+            document.Close();
+            Response.Write(document);
+            Response.End();
+
 
         }
 
@@ -230,43 +261,68 @@ namespace Business_Reporting_App {
 
         protected void RunAllCustomerReportBtn_Click(object sender, EventArgs e) {
 
-            Response.ContentType = "application/pdf";
-            Response.AddHeader("content-disposition", "attachment;filename=Single_Customer_Report.pdf");
-            Response.Cache.SetCacheability(HttpCacheability.NoCache);
-            StringWriter sw = new StringWriter();
-            HtmlTextWriter hw = new HtmlTextWriter(sw);
-            CustomerDataTable.RenderControl(hw);
-            StringReader sr = new StringReader(sw.ToString());
-            Document pdfDoc = new Document(PageSize.A4, 10f, 10f, 10f, 0f);
-            HTMLWorker htmlparser = new HTMLWorker(pdfDoc);
-            PdfWriter.GetInstance(pdfDoc, Response.OutputStream);
-            pdfDoc.Open();
-            htmlparser.Parse(sr);
-            pdfDoc.Close();
-            Response.Write(pdfDoc);
-            Response.End();
+            ExportPDF(CustomerDataTable);
 
         }
         protected void RunAllInvoiceReportBtn_Click(object sender, EventArgs e) {
 
-
+            ExportPDF(InvoiceDataTable);
 
         }
         protected void RunAllInventoryReportBtn_Click(object sender, EventArgs e) {
 
-
+            ExportPDF(InventoryDataTable);
 
         }
         protected void RunAllSupplierReportBtn_Click(object sender, EventArgs e) {
 
-
+            ExportPDF(SupplierDataTable);
 
         }
 
         protected void SingleCustomerSubmitBtn_Click(object sender, EventArgs e) {
 
+            tempGV.DataSource = null;
+            tempGV.DataBind();
 
+            string connectionString = ConfigurationManager.ConnectionStrings["db-connection"].ConnectionString;
 
+            using (MySqlConnection connection = new MySqlConnection(connectionString)) {
+
+                using (MySqlCommand command = new MySqlCommand("SELECT * FROM customer WHERE cust_number=@cust_number", connection)) {
+
+                    MySqlParameter param = new MySqlParameter("@cust_number", CustomerSingleInput.Text);
+                    command.Parameters.Add(param);
+                    connection.Open();
+                    command.ExecuteNonQuery();
+
+                    using (MySqlDataAdapter tempDataAdapter = new MySqlDataAdapter()) {
+
+                        command.Connection = connection;
+                        tempDataAdapter.SelectCommand = command;
+
+                        using (DataTable table = new DataTable()) {
+
+                            tempDataAdapter.Fill(table);
+                            tempGV.DataSource = table;
+                            tempGV.DataBind();
+                            tempGV.HeaderRow.Cells[0].Text = "Customer ID";
+                            tempGV.HeaderRow.Cells[1].Text = "Company";
+                            tempGV.HeaderRow.Cells[2].Text = "Billing Address";
+                            tempGV.HeaderRow.Cells[3].Text = "Shipping Address";
+                            tempGV.HeaderRow.Cells[4].Text = "Contact Email";
+                            tempGV.HeaderRow.Cells[5].Text = "Contact Phone";
+                            tempGV.HeaderRow.Cells[6].Text = "Sales YTD";
+
+                        }
+                    }
+                }
+
+                connection.Close();
+            }
+
+            UpdateCustomerDataTable();
+            ExportPDF(tempGV);
         }
 
         protected void SingleInvoiceSubmitBtn_Click(object sender, EventArgs e) {

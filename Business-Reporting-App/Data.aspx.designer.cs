@@ -679,13 +679,13 @@ namespace Business_Reporting_App {
         protected global::System.Web.UI.WebControls.TextBox InvoiceDeleteInput;
         
         /// <summary>
-        /// InvoiceCustomerSubmitBtn control.
+        /// DeleteInvoiceSubmitBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button InvoiceCustomerSubmitBtn;
+        protected global::System.Web.UI.WebControls.Button DeleteInvoiceSubmitBtn;
         
         /// <summary>
         /// InventoryDeleteUpdatePanel control.
@@ -715,13 +715,13 @@ namespace Business_Reporting_App {
         protected global::System.Web.UI.WebControls.TextBox InventoryDeleteInput;
         
         /// <summary>
-        /// InventoryCustomerSubmitBtn control.
+        /// DeleteInventorySubmitBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button InventoryCustomerSubmitBtn;
+        protected global::System.Web.UI.WebControls.Button DeleteInventorySubmitBtn;
         
         /// <summary>
         /// SupplierDeleteUpdatePanel control.
@@ -751,12 +751,12 @@ namespace Business_Reporting_App {
         protected global::System.Web.UI.WebControls.TextBox SupplierDeleteInput;
         
         /// <summary>
-        /// SupplierCustomerSubmitBtn control.
+        /// DeleteSupplierSubmitBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SupplierCustomerSubmitBtn;
+        protected global::System.Web.UI.WebControls.Button DeleteSupplierSubmitBtn;
     }
 }

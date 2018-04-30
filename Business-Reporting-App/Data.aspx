@@ -358,7 +358,7 @@
                             <asp:TextBox ID="InvoiceDeleteInput" runat="server" CssClass="form-control"></asp:TextBox>
                             <br />
                             <br />
-                            <asp:Button ID="InvoiceCustomerSubmitBtn" runat="server" Text="Submit" CssClass="btn btn-primary" OnClick="DeleteInvoiceSubmitBtn_Click"/>
+                            <asp:Button ID="DeleteInvoiceSubmitBtn" runat="server" Text="Submit" CssClass="btn btn-primary" OnClick="DeleteInvoiceSubmitBtn_Click"/>
                         </div>
                         <div class="modal-footer">
                             <button class="btn btn-info" data-dismiss="modal" aria-hidden="true">Close</button>
@@ -382,7 +382,7 @@
                             <asp:TextBox ID="InventoryDeleteInput" runat="server" CssClass="form-control"></asp:TextBox>
                             <br />
                             <br />
-                            <asp:Button ID="InventoryCustomerSubmitBtn" runat="server" Text="Submit" CssClass="btn btn-primary" OnClick="DeleteInventorySubmitBtn_Click"/>
+                            <asp:Button ID="DeleteInventorySubmitBtn" runat="server" Text="Submit" CssClass="btn btn-primary" OnClick="DeleteInventorySubmitBtn_Click"/>
                         </div>
                         <div class="modal-footer">
                             <button class="btn btn-info" data-dismiss="modal" aria-hidden="true">Close</button>
@@ -406,7 +406,7 @@
                             <asp:TextBox ID="SupplierDeleteInput" runat="server" CssClass="form-control"></asp:TextBox>
                             <br />
                             <br />
-                            <asp:Button ID="SupplierCustomerSubmitBtn" runat="server" Text="Submit" CssClass="btn btn-primary" OnClick="DeleteSupplierSubmitBtn_Click"/>
+                            <asp:Button ID="DeleteSupplierSubmitBtn" runat="server" Text="Submit" CssClass="btn btn-primary" OnClick="DeleteSupplierSubmitBtn_Click"/>
                         </div>
                         <div class="modal-footer">
                             <button class="btn btn-info" data-dismiss="modal" aria-hidden="true">Close</button>

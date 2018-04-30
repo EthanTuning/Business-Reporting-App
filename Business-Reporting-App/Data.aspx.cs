@@ -15,6 +15,14 @@ namespace Business_Reporting_App {
 
         protected void Page_Load(object sender, EventArgs e) {
 
+            ScriptManager.GetCurrent(Page).RegisterPostBackControl(AddCustomerSubmitBtn);
+            ScriptManager.GetCurrent(Page).RegisterPostBackControl(AddInvoiceSubmitBtn);
+            ScriptManager.GetCurrent(Page).RegisterPostBackControl(AddInventorySubmitBtn);
+            ScriptManager.GetCurrent(Page).RegisterPostBackControl(AddSupplierSubmitBtn);
+            ScriptManager.GetCurrent(Page).RegisterPostBackControl(DeleteCustomerSubmitBtn);
+            ScriptManager.GetCurrent(Page).RegisterPostBackControl(DeleteInvoiceSubmitBtn);
+            ScriptManager.GetCurrent(Page).RegisterPostBackControl(DeleteInventorySubmitBtn);
+            ScriptManager.GetCurrent(Page).RegisterPostBackControl(DeleteSupplierSubmitBtn);
             UpdateCustomerDataTable();
             UpdateInvoiceDataTable();
             UpdateInventoryDataTable();
@@ -49,6 +57,7 @@ namespace Business_Reporting_App {
                             CustomerDataTable.HeaderRow.Cells[4].Text = "Contact Email";
                             CustomerDataTable.HeaderRow.Cells[5].Text = "Contact Phone";
                             CustomerDataTable.HeaderRow.Cells[6].Text = "Sales YTD";
+
                         }
                     }
                 }

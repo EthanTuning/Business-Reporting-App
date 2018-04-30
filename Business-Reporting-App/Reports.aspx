@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Reports" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Reports.aspx.cs" Inherits="Business_Reporting_App.Contact" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <asp:GridView Visible="true" ID="tempGV" runat="server" CssClass="table"></asp:GridView>
+    <asp:GridView Visible="false" ID="tempGV" runat="server" CssClass="table"></asp:GridView>
     <div class="jumbotron">
         <h1>Reports</h1>
         <p class="lead">Select what report you want to run.</p>
@@ -48,8 +48,8 @@
                             <h5 class="modal-label-custom"><asp:Label ID="CustomerModalLabel" runat="server" Text="View Data"></asp:Label></h5>
                             <asp:GridView ID="CustomerDataTable" runat="server" CssClass="table"></asp:GridView>
                             <div class="text-center">
-                                <asp:Button ID="RunSingleCustomeReport" CssClass="btn btn-default" runat="server" Text="Run Single Record Report" OnClick="RunSingleCustomerReportBtn_Click" />
-                                <asp:Button ID="RunAllCustomeReport" CssClass="btn btn-default" runat="server" Text="Run All Records Report" OnClick="RunAllCustomerReportBtn_Click" />
+                                <asp:Button ID="RunSingleCustomerReportBtn" CssClass="btn btn-default" runat="server" Text="Run Single Record Report" OnClick="RunSingleCustomerReportBtn_Click" />
+                                <asp:Button ID="RunAllCustomerReportBtn" CssClass="btn btn-default" runat="server" Text="Run All Records Report" OnClick="RunAllCustomerReportBtn_Click" />
                             </div>
                         </div>
                         <div class="modal-footer">

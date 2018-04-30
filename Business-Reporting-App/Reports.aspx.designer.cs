@@ -94,22 +94,22 @@ namespace Business_Reporting_App {
         protected global::System.Web.UI.WebControls.GridView CustomerDataTable;
         
         /// <summary>
-        /// RunSingleCustomeReport control.
+        /// RunSingleCustomerReportBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button RunSingleCustomeReport;
+        protected global::System.Web.UI.WebControls.Button RunSingleCustomerReportBtn;
         
         /// <summary>
-        /// RunAllCustomeReport control.
+        /// RunAllCustomerReportBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button RunAllCustomeReport;
+        protected global::System.Web.UI.WebControls.Button RunAllCustomerReportBtn;
         
         /// <summary>
         /// InvoiceUpdatePanel control.
