@@ -391,6 +391,33 @@ namespace Business_Reporting_App {
         protected global::System.Web.UI.WebControls.Label InvoiceFormModalTitle;
         
         /// <summary>
+        /// InvoiceNumberInput control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox InvoiceNumberInput;
+        
+        /// <summary>
+        /// InvoiceSKUInput control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox InvoiceSKUInput;
+        
+        /// <summary>
+        /// InvoiceQuantityInput control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox InvoiceQuantityInput;
+        
+        /// <summary>
         /// InvoiceCustomerInput control.
         /// </summary>
         /// <remarks>
@@ -400,13 +427,13 @@ namespace Business_Reporting_App {
         protected global::System.Web.UI.WebControls.TextBox InvoiceCustomerInput;
         
         /// <summary>
-        /// InvoiceOrderDatetInput control.
+        /// InvoiceOrderDateInput control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox InvoiceOrderDatetInput;
+        protected global::System.Web.UI.WebControls.TextBox InvoiceOrderDateInput;
         
         /// <summary>
         /// InvoiceShippedDateInput control.

@@ -194,12 +194,24 @@
                             <h4 class="modal-title modal-title-custom"><asp:Label ID="InvoiceFormModalTitle" runat="server" Text="Create/Update An Invoice"></asp:Label></h4>
                         </div>
                         <div class="modal-body">
+                            <asp:Label runat="server" Text="Give Invoice A Number: "></asp:Label>
+                            <asp:TextBox ID="InvoiceNumberInput" runat="server" CssClass="form-control"></asp:TextBox>
+                            <br />
+                            <br />
+                            <asp:Label runat="server" Text="SKU: "></asp:Label>
+                            <asp:TextBox ID="InvoiceSKUInput" runat="server" CssClass="form-control"></asp:TextBox>
+                            <br />
+                            <br />
+                            <asp:Label runat="server" Text="Quantity: "></asp:Label>
+                            <asp:TextBox ID="InvoiceQuantityInput" runat="server" CssClass="form-control"></asp:TextBox>
+                            <br />
+                            <br />
                             <asp:Label runat="server" Text="Customer Number: "></asp:Label>
                             <asp:TextBox ID="InvoiceCustomerInput" runat="server" CssClass="form-control"></asp:TextBox>
                             <br />
                             <br />
                             <asp:Label runat="server" Text="Order Date: "></asp:Label>
-                            <asp:TextBox ID="InvoiceOrderDatetInput" runat="server" CssClass="form-control"></asp:TextBox>
+                            <asp:TextBox ID="InvoiceOrderDateInput" runat="server" CssClass="form-control"></asp:TextBox>
                             <br />
                             <br />
                             <asp:Label runat="server" Text="Shipped Date: "></asp:Label>

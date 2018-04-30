@@ -13,14 +13,9 @@ using System.Configuration;
 namespace Business_Reporting_App {
     public partial class About : Page {
 
-        private string connectionString;
-
         protected void Page_Load(object sender, EventArgs e) {
 
             if (!IsPostBack) {
-
-
-                connectionString = ConfigurationManager.ConnectionStrings["db-connection"].ConnectionString;
 
                 UpdateCustomerDataTable();
                 UpdateInvoiceDataTable();
@@ -32,6 +27,8 @@ namespace Business_Reporting_App {
         }
 
         private void UpdateCustomerDataTable() {
+
+            string connectionString = ConfigurationManager.ConnectionStrings["db-connection"].ConnectionString;
 
             using (MySqlConnection connection = new MySqlConnection(connectionString)) {
 
@@ -67,6 +64,8 @@ namespace Business_Reporting_App {
 
         private void UpdateInvoiceDataTable() {
 
+            string connectionString = ConfigurationManager.ConnectionStrings["db-connection"].ConnectionString;
+
             using (MySqlConnection connection = new MySqlConnection(connectionString)) {
 
                 connection.Open();
@@ -101,6 +100,8 @@ namespace Business_Reporting_App {
 
         private void UpdateInventoryDataTable() {
 
+            string connectionString = ConfigurationManager.ConnectionStrings["db-connection"].ConnectionString;
+
             using (MySqlConnection connection = new MySqlConnection(connectionString)) {
 
                 connection.Open();
@@ -134,6 +135,8 @@ namespace Business_Reporting_App {
         }
 
         private void UpdateSupplierDataTable() {
+
+            string connectionString = ConfigurationManager.ConnectionStrings["db-connection"].ConnectionString;
 
             using (MySqlConnection connection = new MySqlConnection(connectionString)) {
 
@@ -226,30 +229,31 @@ namespace Business_Reporting_App {
 
         protected void AddCustomerSubmitBtn_Click(object sender, EventArgs e) {
 
+            string connectionString = ConfigurationManager.ConnectionStrings["db-connection"].ConnectionString;
+
             using (MySqlConnection connection = new MySqlConnection(connectionString)) {
 
-                connection.Open();
+                using (MySqlCommand command = new MySqlCommand("INSERT INTO customer (company, contact, phone, billing_address, shipping_address) VALUES (@company, @contact, @phone, @billing_address, @shipping_address)",connection)) {
 
-                using (MySqlCommand command = new MySqlCommand("INSERT INTO customer (company, contact, phone, billing_address, shipping_address) VALUES (@company, @contact, @phone, @billing_address, @shipping_address)")) {
-
-                    MySqlParameter param1 = new MySqlParameter("@company", CustomerCompanyInput);
-                    MySqlParameter param2 = new MySqlParameter("@contact", CustomerContactInput);
-                    MySqlParameter param3 = new MySqlParameter("@phone", CustomerPhoneInput);
-                    MySqlParameter param4 = new MySqlParameter("@billing_address", CustomerBillingInput);
-                    MySqlParameter param5 = new MySqlParameter("@shipping_address", CustomerShippingInput);
+                    MySqlParameter param1 = new MySqlParameter("@company", CustomerCompanyInput.Text);
+                    MySqlParameter param2 = new MySqlParameter("@contact", CustomerContactInput.Text);
+                    MySqlParameter param3 = new MySqlParameter("@phone", CustomerPhoneInput.Text);
+                    MySqlParameter param4 = new MySqlParameter("@billing_address", CustomerBillingInput.Text);
+                    MySqlParameter param5 = new MySqlParameter("@shipping_address", CustomerShippingInput.Text);
                     object[] parms = new object[] { param1, param2, param3, param4, param5 };
                     command.Parameters.AddRange(parms);
+                    connection.Open();
                     command.ExecuteNonQuery();
 
                 }
 
-                using (MySqlCommand command = new MySqlCommand("CALL update_input_totals()")) {
+                using (MySqlCommand command = new MySqlCommand("SET SQL_SAFE_UPDATES = 0; CALL update_invoice_totals();",connection)) {
 
                     command.ExecuteNonQuery();
 
                 }
 
-                using(MySqlCommand command = new MySqlCommand("CALL update_sales_ytd()")) {
+                using (MySqlCommand command = new MySqlCommand("SET SQL_SAFE_UPDATES = 0; CALL update_sales_ytd();",connection)) {
 
                     command.ExecuteNonQuery();
 
@@ -264,7 +268,42 @@ namespace Business_Reporting_App {
 
         protected void AddInvoiceSubmitBtn_Click(object sender, EventArgs e) {
 
+            string connectionString = ConfigurationManager.ConnectionStrings["db-connection"].ConnectionString;
 
+            using (MySqlConnection connection = new MySqlConnection(connectionString)) {
+
+                using (MySqlCommand command = new MySqlCommand("INSERT INTO invoice (cust_number, order_date, shipped_date, status) VALUES (@cust_number, @order_date, @shipped_date, @status);" +
+                                                               "INSERT INTO line_item (invoice_num, sku, quantity) VALUES (@invoice_num, @sku, @quantity);", connection)) {
+
+                    MySqlParameter param1 = new MySqlParameter("@cust_number", InvoiceCustomerInput.Text);
+                    MySqlParameter param2 = new MySqlParameter("@order_date", InvoiceOrderDateInput.Text);
+                    MySqlParameter param3 = new MySqlParameter("@shipped_date", InvoiceShippedDateInput.Text);
+                    MySqlParameter param4 = new MySqlParameter("@invoice_numer", InvoiceNumberInput.Text);
+                    MySqlParameter param5 = new MySqlParameter("@sku", InvoiceSKUInput.Text);
+                    MySqlParameter param6 = new MySqlParameter("@quantity", InvoiceQuantityInput.Text);
+                    object[] parms = new object[] { param1, param2, param3, param4, param5, param6 };
+                    command.Parameters.AddRange(parms);
+                    connection.Open();
+                    command.ExecuteNonQuery();
+
+                }
+
+                using (MySqlCommand command = new MySqlCommand("SET SQL_SAFE_UPDATES = 0; CALL update_invoice_totals();", connection)) {
+
+                    command.ExecuteNonQuery();
+
+                }
+
+                using (MySqlCommand command = new MySqlCommand("SET SQL_SAFE_UPDATES = 0; CALL update_sales_ytd();", connection)) {
+
+                    command.ExecuteNonQuery();
+
+                }
+
+                connection.Close();
+            }
+
+            UpdateCustomerDataTable();
 
         }
 
@@ -338,6 +377,8 @@ namespace Business_Reporting_App {
 
         protected void DeleteCustomerSubmitBtn_Click(object sender, EventArgs e) {
 
+            string connectionString = ConfigurationManager.ConnectionStrings["db-connection"].ConnectionString;
+
             using (MySqlConnection connection = new MySqlConnection(connectionString)) {
 
                 using (MySqlCommand command = new MySqlCommand("DELETE FROM customer WHERE cust_number=@cust_number")) {
@@ -352,6 +393,8 @@ namespace Business_Reporting_App {
         }
 
         protected void DeleteInvoiceSubmitBtn_Click(object sender, EventArgs e) {
+
+            string connectionString = ConfigurationManager.ConnectionStrings["db-connection"].ConnectionString;
 
             using (MySqlConnection connection = new MySqlConnection(connectionString)) {
 
@@ -368,6 +411,8 @@ namespace Business_Reporting_App {
 
         protected void DeleteInventorySubmitBtn_Click(object sender, EventArgs e) {
 
+            string connectionString = ConfigurationManager.ConnectionStrings["db-connection"].ConnectionString;
+
             using (MySqlConnection connection = new MySqlConnection(connectionString)) {
 
                 using (MySqlCommand command = new MySqlCommand("DELETE FROM inventory WHERE sku=@sku")) {
@@ -382,6 +427,8 @@ namespace Business_Reporting_App {
         }
 
         protected void DeleteSupplierSubmitBtn_Click(object sender, EventArgs e) {
+
+            string connectionString = ConfigurationManager.ConnectionStrings["db-connection"].ConnectionString;
 
             using (MySqlConnection connection = new MySqlConnection(connectionString)) {
 
