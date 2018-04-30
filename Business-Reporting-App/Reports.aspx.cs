@@ -24,7 +24,9 @@ namespace Business_Reporting_App {
         }
 
         public override void VerifyRenderingInServerForm(Control control) {
+
             /* Verifies that the control is rendered */
+
         }
 
         private void UpdateCustomerDataTable() {
@@ -243,8 +245,6 @@ namespace Business_Reporting_App {
             pdfDoc.Close();
             Response.Write(pdfDoc);
             Response.End();
-            CustomerDataTable.AllowPaging = true;
-            CustomerDataTable.DataBind();
 
         }
         protected void RunAllInvoiceReportBtn_Click(object sender, EventArgs e) {
