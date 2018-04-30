@@ -47,6 +47,8 @@
                             <asp:GridView ID="CustomerDataTable" runat="server" CssClass="table"></asp:GridView>
                             <div class="text-center">
                                 <asp:Button ID="AddCustomerBtn" CssClass="btn btn-default" runat="server" Text="Add" OnClick="AddCustomerBtn_Click" />
+                                <asp:Button ID="DeleteCustomerBtn" CssClass="btn btn-default" runat="server" Text="Delete" OnClick="DeleteCustomerBtn_Click" />
+                                <asp:Button ID="UpdateCustomerBtn" CssClass="btn btn-default" runat="server" Text="Update" OnClick="UpdateCustomerBtn_Click" />
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -71,7 +73,9 @@
                             <h5 class="modal-label-custom"><asp:Label ID="InvoiceModalLabel" runat="server" Text=" Edit Data"></asp:Label></h5>
                             <asp:GridView ID="InvoiceDataTable" runat="server" CssClass="table"></asp:GridView>
                             <div class="text-center">
-                                <asp:Button ID="AddInvoiceBtn" CssClass="btn btn-default add-btn" runat="server" Text="Add" OnClick="AddInvoiceBtn_Click" />
+                                <asp:Button ID="AddInvoiceBtn" CssClass="btn btn-default" runat="server" Text="Add" OnClick="AddInvoiceBtn_Click" />
+                                <asp:Button ID="DeleteInvoiceBtn" CssClass="btn btn-default" runat="server" Text="Delete" OnClick="DeleteInvoiceBtn_Click" />
+                                <asp:Button ID="UpdateInvoiceBtn" CssClass="btn btn-default" runat="server" Text="Update" OnClick="UpdateInvoiceBtn_Click" />
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -96,7 +100,9 @@
                             <h5 class="modal-label-custom"><asp:Label ID="InventoryModalLabel" runat="server" Text="Edit Data"></asp:Label></h5>
                             <asp:GridView ID="InventoryDataTable" runat="server" CssClass="table"></asp:GridView>
                             <div class="text-center">
-                                <asp:Button ID="AddInventoryBtn" CssClass="btn btn-default add-btn" runat="server" Text="Add" OnClick="AddInventoryBtn_Click" />
+                                <asp:Button ID="AddInventoryBtn" CssClass="btn btn-default" runat="server" Text="Add" OnClick="AddInventoryBtn_Click" />
+                                <asp:Button ID="DeleteInventoryBtn" CssClass="btn btn-default" runat="server" Text="Delete" OnClick="DeleteInventoryBtn_Click" />
+                                <asp:Button ID="UpdateInventoryBtn" CssClass="btn btn-default" runat="server" Text="Update" OnClick="UpdateInventoryBtn_Click" />
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -121,7 +127,9 @@
                             <h5 class="modal-label-custom"><asp:Label ID="SupplierModalLabel" runat="server" Text="Edit Data"></asp:Label></h5>
                             <asp:GridView ID="SupplierDataTable" runat="server" CssClass="table"></asp:GridView>
                             <div class="text-center">
-                                <asp:Button ID="AddSupplierBtn" CssClass="btn btn-default add-btn" runat="server" Text="Add" OnClick="AddSupplierBtn_Click" />
+                                <asp:Button ID="AddSupplierBtn" CssClass="btn btn-default" runat="server" Text="Add" OnClick="AddSupplierBtn_Click" />
+                                <asp:Button ID="DeleteSupplierBtn" CssClass="btn btn-default" runat="server" Text="Delete" OnClick="DeleteSupplierBtn_Click" />
+                                <asp:Button ID="UpdateSupplierBtn" CssClass="btn btn-default" runat="server" Text="Update" OnClick="UpdateSupplierBtn_Click" />
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -133,7 +141,7 @@
         </div>
     </div>
 
-    <!-- Bootstrap Modal Dialogs For Adding Data -->
+    <!-- Bootstrap Modal Dialogs For Adding/Updating Data -->
 
     <div class="modal fade" id="customer-form-modal" role="dialog">
         <div class="modal-dialog">
@@ -142,7 +150,7 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            <h4 class="modal-title modal-title-custom"><asp:Label ID="CustomerFormModalTitle" runat="server" Text="Add A Customer"></asp:Label></h4>
+                            <h4 class="modal-title modal-title-custom"><asp:Label ID="CustomerFormModalTitle" runat="server" Text="Add/Update A Customer"></asp:Label></h4>
                         </div>
                         <div class="modal-body">
                             <asp:Label runat="server" Text="Company: "></asp:Label>
@@ -183,7 +191,7 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            <h4 class="modal-title modal-title-custom"><asp:Label ID="InvoiceFormModalTitle" runat="server" Text="Create An Invoice"></asp:Label></h4>
+                            <h4 class="modal-title modal-title-custom"><asp:Label ID="InvoiceFormModalTitle" runat="server" Text="Create/Update An Invoice"></asp:Label></h4>
                         </div>
                         <div class="modal-body">
                             <asp:Label runat="server" Text="Customer Number: "></asp:Label>
@@ -220,7 +228,7 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            <h4 class="modal-title modal-title-custom"><asp:Label ID="InventoryFormModalTitle" runat="server" Text="Add An Item To Your Inventory"></asp:Label></h4>
+                            <h4 class="modal-title modal-title-custom"><asp:Label ID="InventoryFormModalTitle" runat="server" Text="Add/Update An Item To Your Inventory"></asp:Label></h4>
                         </div>
                         <div class="modal-body">
                             <asp:Label runat="server" Text="SKU: "></asp:Label>
@@ -257,7 +265,7 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            <h4 class="modal-title modal-title-custom"><asp:Label ID="SupplierFormModalTitle" runat="server" Text="Add A Supplier"></asp:Label></h4>
+                            <h4 class="modal-title modal-title-custom"><asp:Label ID="SupplierFormModalTitle" runat="server" Text="Add/Update A Supplier"></asp:Label></h4>
                         </div>
                         <div class="modal-body">
                             <asp:Label runat="server" Text="Company: "></asp:Label>
@@ -281,6 +289,103 @@
                             <br />
                             <br />
                             <asp:Button ID="AddSupplierSubmitBtn" runat="server" Text="Submit" CssClass="btn btn-primary" OnClick="AddSupplierSubmitBtn_Click"/>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-info" data-dismiss="modal" aria-hidden="true">Close</button>
+                        </div>
+                    </div>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+        </div>
+    </div>
+    <!-- Bootstrap Modal Dialogs For Deleting Data -->
+
+    <div class="modal fade" id="customer-delete-modal" role="dialog">
+        <div class="modal-dialog">
+            <asp:UpdatePanel ID="CustomerDeleteUpdatePanel" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
+                <ContentTemplate>
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title modal-title-custom"><asp:Label ID="CustomerDeleteModalTitle" runat="server" Text="Delete A Customer By ID"></asp:Label></h4>
+                        </div>
+                        <div class="modal-body">
+                            <asp:TextBox ID="CustomerDeleteInput" runat="server" CssClass="form-control"></asp:TextBox>
+                            <br />
+                            <br />
+                            <asp:Button ID="DeleteCustomerSubmitBtn" runat="server" Text="Submit" CssClass="btn btn-primary" OnClick="DeleteCustomerSubmitBtn_Click"/>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-info" data-dismiss="modal" aria-hidden="true">Close</button>
+                        </div>
+                    </div>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+        </div>
+    </div>
+
+    <div class="modal fade" id="invoice-delete-modal" role="dialog">
+        <div class="modal-dialog">
+            <asp:UpdatePanel ID="InvoiceDeleteUpdatePanel" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
+                <ContentTemplate>
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title modal-title-custom"><asp:Label ID="InvoiceDeleteModalTitle" runat="server" Text="Delete An Invoice By ID"></asp:Label></h4>
+                        </div>
+                        <div class="modal-body">
+                            <asp:TextBox ID="InvoiceDeleteInput" runat="server" CssClass="form-control"></asp:TextBox>
+                            <br />
+                            <br />
+                            <asp:Button ID="InvoiceCustomerSubmitBtn" runat="server" Text="Submit" CssClass="btn btn-primary" OnClick="DeleteInvoiceSubmitBtn_Click"/>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-info" data-dismiss="modal" aria-hidden="true">Close</button>
+                        </div>
+                    </div>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+        </div>
+    </div>
+
+    <div class="modal fade" id="inventory-delete-modal" role="dialog">
+        <div class="modal-dialog">
+            <asp:UpdatePanel ID="InventoryDeleteUpdatePanel" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
+                <ContentTemplate>
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title modal-title-custom"><asp:Label ID="InventoryDeleteModalTitle" runat="server" Text="Delete An Inventory Item By ID"></asp:Label></h4>
+                        </div>
+                        <div class="modal-body">
+                            <asp:TextBox ID="InventoryDeleteInput" runat="server" CssClass="form-control"></asp:TextBox>
+                            <br />
+                            <br />
+                            <asp:Button ID="InventoryCustomerSubmitBtn" runat="server" Text="Submit" CssClass="btn btn-primary" OnClick="DeleteInventorySubmitBtn_Click"/>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-info" data-dismiss="modal" aria-hidden="true">Close</button>
+                        </div>
+                    </div>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+        </div>
+    </div>
+
+    <div class="modal fade" id="supplier-delete-modal" role="dialog">
+        <div class="modal-dialog">
+            <asp:UpdatePanel ID="SupplierDeleteUpdatePanel" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
+                <ContentTemplate>
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title modal-title-custom"><asp:Label ID="SupplierDeleteModalTitle" runat="server" Text="Delete A Supplier By ID"></asp:Label></h4>
+                        </div>
+                        <div class="modal-body">
+                            <asp:TextBox ID="SupplierDeleteInput" runat="server" CssClass="form-control"></asp:TextBox>
+                            <br />
+                            <br />
+                            <asp:Button ID="SupplierCustomerSubmitBtn" runat="server" Text="Submit" CssClass="btn btn-primary" OnClick="DeleteSupplierSubmitBtn_Click"/>
                         </div>
                         <div class="modal-footer">
                             <button class="btn btn-info" data-dismiss="modal" aria-hidden="true">Close</button>

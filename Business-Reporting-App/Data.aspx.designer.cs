@@ -94,6 +94,24 @@ namespace Business_Reporting_App {
         protected global::System.Web.UI.WebControls.Button AddCustomerBtn;
         
         /// <summary>
+        /// DeleteCustomerBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button DeleteCustomerBtn;
+        
+        /// <summary>
+        /// UpdateCustomerBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button UpdateCustomerBtn;
+        
+        /// <summary>
         /// InvoiceUpdatePanel control.
         /// </summary>
         /// <remarks>
@@ -137,6 +155,24 @@ namespace Business_Reporting_App {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button AddInvoiceBtn;
+        
+        /// <summary>
+        /// DeleteInvoiceBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button DeleteInvoiceBtn;
+        
+        /// <summary>
+        /// UpdateInvoiceBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button UpdateInvoiceBtn;
         
         /// <summary>
         /// InventoryUpdatePanel control.
@@ -184,6 +220,24 @@ namespace Business_Reporting_App {
         protected global::System.Web.UI.WebControls.Button AddInventoryBtn;
         
         /// <summary>
+        /// DeleteInventoryBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button DeleteInventoryBtn;
+        
+        /// <summary>
+        /// UpdateInventoryBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button UpdateInventoryBtn;
+        
+        /// <summary>
         /// SupplierUpdatePanel control.
         /// </summary>
         /// <remarks>
@@ -227,6 +281,24 @@ namespace Business_Reporting_App {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button AddSupplierBtn;
+        
+        /// <summary>
+        /// DeleteSupplierBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button DeleteSupplierBtn;
+        
+        /// <summary>
+        /// UpdateSupplierBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button UpdateSupplierBtn;
         
         /// <summary>
         /// CustomerFormUpdatePanel control.
@@ -497,5 +569,149 @@ namespace Business_Reporting_App {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button AddSupplierSubmitBtn;
+        
+        /// <summary>
+        /// CustomerDeleteUpdatePanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel CustomerDeleteUpdatePanel;
+        
+        /// <summary>
+        /// CustomerDeleteModalTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label CustomerDeleteModalTitle;
+        
+        /// <summary>
+        /// CustomerDeleteInput control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox CustomerDeleteInput;
+        
+        /// <summary>
+        /// DeleteCustomerSubmitBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button DeleteCustomerSubmitBtn;
+        
+        /// <summary>
+        /// InvoiceDeleteUpdatePanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel InvoiceDeleteUpdatePanel;
+        
+        /// <summary>
+        /// InvoiceDeleteModalTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label InvoiceDeleteModalTitle;
+        
+        /// <summary>
+        /// InvoiceDeleteInput control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox InvoiceDeleteInput;
+        
+        /// <summary>
+        /// InvoiceCustomerSubmitBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button InvoiceCustomerSubmitBtn;
+        
+        /// <summary>
+        /// InventoryDeleteUpdatePanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel InventoryDeleteUpdatePanel;
+        
+        /// <summary>
+        /// InventoryDeleteModalTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label InventoryDeleteModalTitle;
+        
+        /// <summary>
+        /// InventoryDeleteInput control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox InventoryDeleteInput;
+        
+        /// <summary>
+        /// InventoryCustomerSubmitBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button InventoryCustomerSubmitBtn;
+        
+        /// <summary>
+        /// SupplierDeleteUpdatePanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel SupplierDeleteUpdatePanel;
+        
+        /// <summary>
+        /// SupplierDeleteModalTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label SupplierDeleteModalTitle;
+        
+        /// <summary>
+        /// SupplierDeleteInput control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox SupplierDeleteInput;
+        
+        /// <summary>
+        /// SupplierCustomerSubmitBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button SupplierCustomerSubmitBtn;
     }
 }
