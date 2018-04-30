@@ -15,14 +15,10 @@ namespace Business_Reporting_App {
 
         protected void Page_Load(object sender, EventArgs e) {
 
-            if (!IsPostBack) {
-
-                UpdateCustomerDataTable();
-                UpdateInvoiceDataTable();
-                UpdateInventoryDataTable();
-                UpdateSupplierDataTable();
-
-            }
+            UpdateCustomerDataTable();
+            UpdateInvoiceDataTable();
+            UpdateInventoryDataTable();
+            UpdateSupplierDataTable();
 
         }
 
@@ -272,16 +268,17 @@ namespace Business_Reporting_App {
 
             using (MySqlConnection connection = new MySqlConnection(connectionString)) {
 
-                using (MySqlCommand command = new MySqlCommand("INSERT INTO invoice (cust_number, order_date, shipped_date, status) VALUES (@cust_number, @order_date, @shipped_date, @status);" +
+                using (MySqlCommand command = new MySqlCommand("INSERT INTO invoice (invoice_num, cust_number, order_date, shipped_date, status) VALUES (@invoice_num, @cust_number, @order_date, @shipped_date, @status);" +
                                                                "INSERT INTO line_item (invoice_num, sku, quantity) VALUES (@invoice_num, @sku, @quantity);", connection)) {
 
                     MySqlParameter param1 = new MySqlParameter("@cust_number", InvoiceCustomerInput.Text);
                     MySqlParameter param2 = new MySqlParameter("@order_date", InvoiceOrderDateInput.Text);
-                    MySqlParameter param3 = new MySqlParameter("@shipped_date", InvoiceShippedDateInput.Text);
-                    MySqlParameter param4 = new MySqlParameter("@invoice_numer", InvoiceNumberInput.Text);
-                    MySqlParameter param5 = new MySqlParameter("@sku", InvoiceSKUInput.Text);
-                    MySqlParameter param6 = new MySqlParameter("@quantity", InvoiceQuantityInput.Text);
-                    object[] parms = new object[] { param1, param2, param3, param4, param5, param6 };
+                    MySqlParameter param3 = new MySqlParameter("@status", InvoiceStatusInput.Text);
+                    MySqlParameter param4 = new MySqlParameter("@shipped_date", InvoiceShippedDateInput.Text);
+                    MySqlParameter param5 = new MySqlParameter("@invoice_num", InvoiceNumberInput.Text);
+                    MySqlParameter param6 = new MySqlParameter("@sku", InvoiceSKUInput.Text);
+                    MySqlParameter param7 = new MySqlParameter("@quantity", InvoiceQuantityInput.Text);
+                    object[] parms = new object[] { param1, param2, param3, param4, param5, param6, param7 };
                     command.Parameters.AddRange(parms);
                     connection.Open();
                     command.ExecuteNonQuery();
@@ -309,13 +306,79 @@ namespace Business_Reporting_App {
 
         protected void AddInventorySubmitBtn_Click(object sender, EventArgs e) {
 
+            string connectionString = ConfigurationManager.ConnectionStrings["db-connection"].ConnectionString;
 
+            using (MySqlConnection connection = new MySqlConnection(connectionString)) {
+
+                using (MySqlCommand command = new MySqlCommand("INSERT INTO inventory (description, qoh, unit_weight, unit_price, supplier_id) VALUES (@description, @qoh, @unit_weight, @unir_price, @supplier_id)", connection)) {
+
+                    MySqlParameter param1 = new MySqlParameter("@description", InventDescInput.Text);
+                    MySqlParameter param2 = new MySqlParameter("@qoh", InventQOHInput.Text);
+                    MySqlParameter param3 = new MySqlParameter("@unit_weight", InventWeightInput.Text);
+                    MySqlParameter param4 = new MySqlParameter("@unit_price", InventPriceInput.Text);
+                    MySqlParameter param5 = new MySqlParameter("@supplier_id", InventSupplierIDInput.Text);
+                    object[] parms = new object[] { param1, param2, param3, param4, param5 };
+                    command.Parameters.AddRange(parms);
+                    connection.Open();
+                    command.ExecuteNonQuery();
+
+                }
+
+                using (MySqlCommand command = new MySqlCommand("SET SQL_SAFE_UPDATES = 0; CALL update_invoice_totals();", connection)) {
+
+                    command.ExecuteNonQuery();
+
+                }
+
+                using (MySqlCommand command = new MySqlCommand("SET SQL_SAFE_UPDATES = 0; CALL update_sales_ytd();", connection)) {
+
+                    command.ExecuteNonQuery();
+
+                }
+
+                connection.Close();
+            }
+
+            UpdateCustomerDataTable();
 
         }
 
         protected void AddSupplierSubmitBtn_Click(object sender, EventArgs e) {
 
+            string connectionString = ConfigurationManager.ConnectionStrings["db-connection"].ConnectionString;
 
+            using (MySqlConnection connection = new MySqlConnection(connectionString)) {
+
+                using (MySqlCommand command = new MySqlCommand("INSERT INTO supplier (company, contact, phone, billing_address, shipping_address) VALUES (@company, @contact, @phone, @billing_address, @shipping_address)", connection)) {
+
+                    MySqlParameter param1 = new MySqlParameter("@company", SupplierCompanyInput.Text);
+                    MySqlParameter param2 = new MySqlParameter("@contact", SupplierContactInput.Text);
+                    MySqlParameter param3 = new MySqlParameter("@phone", SupplierPhoneInput.Text);
+                    MySqlParameter param4 = new MySqlParameter("@billing_address", SupplierBillingInput.Text);
+                    MySqlParameter param5 = new MySqlParameter("@shipping_address", SupplierShippingInput.Text);
+                    object[] parms = new object[] { param1, param2, param3, param4, param5 };
+                    command.Parameters.AddRange(parms);
+                    connection.Open();
+                    command.ExecuteNonQuery();
+
+                }
+
+                using (MySqlCommand command = new MySqlCommand("SET SQL_SAFE_UPDATES = 0; CALL update_invoice_totals();", connection)) {
+
+                    command.ExecuteNonQuery();
+
+                }
+
+                using (MySqlCommand command = new MySqlCommand("SET SQL_SAFE_UPDATES = 0; CALL update_sales_ytd();", connection)) {
+
+                    command.ExecuteNonQuery();
+
+                }
+
+                connection.Close();
+            }
+
+            UpdateCustomerDataTable();
 
         }
 
@@ -381,14 +444,31 @@ namespace Business_Reporting_App {
 
             using (MySqlConnection connection = new MySqlConnection(connectionString)) {
 
-                using (MySqlCommand command = new MySqlCommand("DELETE FROM customer WHERE cust_number=@cust_number")) {
+                using (MySqlCommand command = new MySqlCommand("DELETE FROM customer WHERE cust_number=@cust_number", connection)) {
 
-                    MySqlParameter param = new MySqlParameter("@cust_number", CustomerDeleteInput);
+                    MySqlParameter param = new MySqlParameter("@cust_number", CustomerDeleteInput.Text);
                     command.Parameters.Add(param);
+                    connection.Open();
                     command.ExecuteNonQuery();
 
                 }
+
+                using (MySqlCommand command = new MySqlCommand("SET SQL_SAFE_UPDATES = 0; CALL update_invoice_totals();", connection)) {
+
+                    command.ExecuteNonQuery();
+
+                }
+
+                using (MySqlCommand command = new MySqlCommand("SET SQL_SAFE_UPDATES = 0; CALL update_sales_ytd();", connection)) {
+
+                    command.ExecuteNonQuery();
+
+                }
+
+                connection.Close();
             }
+
+            UpdateCustomerDataTable();
 
         }
 
@@ -398,14 +478,31 @@ namespace Business_Reporting_App {
 
             using (MySqlConnection connection = new MySqlConnection(connectionString)) {
 
-                using (MySqlCommand command = new MySqlCommand("DELETE FROM invoice WHERE invoice_num=@invoice_num")) {
+                using (MySqlCommand command = new MySqlCommand("DELETE FROM invoice WHERE invoice_num=@invoice_num", connection)) {
 
-                    MySqlParameter param = new MySqlParameter("@invoice_num", InvoiceDeleteInput);
+                    MySqlParameter param = new MySqlParameter("@invoice_num", InvoiceDeleteInput.Text);
                     command.Parameters.Add(param);
+                    connection.Open();
                     command.ExecuteNonQuery();
 
                 }
+
+                using (MySqlCommand command = new MySqlCommand("SET SQL_SAFE_UPDATES = 0; CALL update_invoice_totals();", connection)) {
+
+                    command.ExecuteNonQuery();
+
+                }
+
+                using (MySqlCommand command = new MySqlCommand("SET SQL_SAFE_UPDATES = 0; CALL update_sales_ytd();", connection)) {
+
+                    command.ExecuteNonQuery();
+
+                }
+
+                connection.Close();
             }
+
+            UpdateCustomerDataTable();
 
         }
 
@@ -415,14 +512,31 @@ namespace Business_Reporting_App {
 
             using (MySqlConnection connection = new MySqlConnection(connectionString)) {
 
-                using (MySqlCommand command = new MySqlCommand("DELETE FROM inventory WHERE sku=@sku")) {
+                using (MySqlCommand command = new MySqlCommand("DELETE FROM Inventory WHERE sku=@sku", connection)) {
 
-                    MySqlParameter param = new MySqlParameter("@sku", InventoryDeleteInput);
+                    MySqlParameter param = new MySqlParameter("@sku", InventoryDeleteInput.Text);
                     command.Parameters.Add(param);
+                    connection.Open();
                     command.ExecuteNonQuery();
 
                 }
+
+                using (MySqlCommand command = new MySqlCommand("SET SQL_SAFE_UPDATES = 0; CALL update_invoice_totals();", connection)) {
+
+                    command.ExecuteNonQuery();
+
+                }
+
+                using (MySqlCommand command = new MySqlCommand("SET SQL_SAFE_UPDATES = 0; CALL update_sales_ytd();", connection)) {
+
+                    command.ExecuteNonQuery();
+
+                }
+
+                connection.Close();
             }
+
+            UpdateCustomerDataTable();
 
         }
 
@@ -432,14 +546,31 @@ namespace Business_Reporting_App {
 
             using (MySqlConnection connection = new MySqlConnection(connectionString)) {
 
-                using (MySqlCommand command = new MySqlCommand("DELETE FROM supplier WHERE supply_id=@supply_id")) {
+                using (MySqlCommand command = new MySqlCommand("DELETE FROM supplier WHERE supplier_id=@supplier_id", connection)) {
 
-                    MySqlParameter param = new MySqlParameter("@supplier_id", SupplierDeleteInput);
+                    MySqlParameter param = new MySqlParameter("@supplier_id", SupplierDeleteInput.Text);
                     command.Parameters.Add(param);
+                    connection.Open();
                     command.ExecuteNonQuery();
 
                 }
+
+                using (MySqlCommand command = new MySqlCommand("SET SQL_SAFE_UPDATES = 0; CALL update_invoice_totals();", connection)) {
+
+                    command.ExecuteNonQuery();
+
+                }
+
+                using (MySqlCommand command = new MySqlCommand("SET SQL_SAFE_UPDATES = 0; CALL update_sales_ytd();", connection)) {
+
+                    command.ExecuteNonQuery();
+
+                }
+
+                connection.Close();
             }
+
+            UpdateCustomerDataTable();
 
         }
     }

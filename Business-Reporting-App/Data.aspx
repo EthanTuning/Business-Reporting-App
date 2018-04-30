@@ -256,7 +256,15 @@
                             <br />
                             <br />
                             <asp:Label runat="server" Text="Supplier ID: "></asp:Label>
-                            <asp:TextBox ID="InventSupllierIDInput" runat="server" CssClass="form-control"></asp:TextBox>
+                            <asp:TextBox ID="InventSupplierIDInput" runat="server" CssClass="form-control"></asp:TextBox>
+                            <br />
+                            <br />
+                            <asp:Label runat="server" Text="Supplier ID: "></asp:Label>
+                            <asp:TextBox ID="InventPriceInput" runat="server" CssClass="form-control"></asp:TextBox>
+                            <br />
+                            <br />
+                            <asp:Label runat="server" Text="Supplier ID: "></asp:Label>
+                            <asp:TextBox ID="InventWeightInput" runat="server" CssClass="form-control"></asp:TextBox>
                             <br />
                             <br />
                             <asp:Button ID="AddInventorySubmitBtn" runat="server" Text="Submit" CssClass="btn btn-primary" OnClick="AddInventorySubmitBtn_Click"/>
@@ -310,6 +318,7 @@
             </asp:UpdatePanel>
         </div>
     </div>
+
     <!-- Bootstrap Modal Dialogs For Deleting Data -->
 
     <div class="modal fade" id="customer-delete-modal" role="dialog">
