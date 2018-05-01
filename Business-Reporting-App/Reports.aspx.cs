@@ -43,7 +43,7 @@ namespace Business_Reporting_App {
         private void ExportPDF (Control view) {
 
             Response.ContentType = "application/pdf";
-            Response.AddHeader("content-disposition", "attachment;filename=All_Customers_Report.pdf");
+            Response.AddHeader("content-disposition", "attachment;filename=Report.pdf");
             Response.Cache.SetCacheability(HttpCacheability.NoCache);
             StringWriter sw = new StringWriter();
             HtmlTextWriter hw = new HtmlTextWriter(sw);
