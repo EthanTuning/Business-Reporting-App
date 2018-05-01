@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Reports" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Reports.aspx.cs" Inherits="Business_Reporting_App.Contact" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <asp:GridView Visible="false" ID="tempGV" runat="server" CssClass="table"></asp:GridView>
+    <asp:GridView Visible="true" ID="tempGV" runat="server" CssClass="table"></asp:GridView>
     <div class="jumbotron">
         <h1>Reports</h1>
         <p class="lead">Select what report you want to run.</p>
@@ -29,6 +29,18 @@
                 <h2>Supplier Report</h2>
                 <p>View all of your supplier's information or find a particular supplier's information.</p>
                 <p><asp:Button ID="SupplierDataBtn" runat="server" CssClass="btn btn-default" Text="Go &raquo;" OnClick="SupplierDataBtn_Click" /></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <h2>Total Sales Report</h2>
+                <p>Report to show total sales for your company.</p>
+                <p><asp:Button ID="RunTotalSalesBtn" runat="server" CssClass="btn btn-default" Text="Go &raquo;" OnClick="RunTotalSalesBtn_Click" /></p>
+            </div>
+            <div class="col-sm-6">
+                <h2>Average Invoice Amount Report</h2>
+                <p>Report to show the average sale for your company.</p>
+                <p><asp:Button ID="RunAvgSalesBtn" runat="server" CssClass="btn btn-default" Text="Go &raquo;" OnClick="RunAvgSalesBtn_Click" /></p>
             </div>
         </div>
     </div>
@@ -178,7 +190,7 @@
                             <asp:TextBox ID="InvoiceSingleInput" runat="server" CssClass="form-control"></asp:TextBox>
                             <br />
                             <br />
-                            <asp:Button ID="InvoiceCustomerSubmitBtn" runat="server" Text="Submit" CssClass="btn btn-primary" OnClick="SingleInvoiceSubmitBtn_Click"/>
+                            <asp:Button ID="SingleInvoiceSubmitBtn" runat="server" Text="Submit" CssClass="btn btn-primary" OnClick="SingleInvoiceSubmitBtn_Click"/>
                         </div>
                         <div class="modal-footer">
                             <button class="btn btn-info" data-dismiss="modal" aria-hidden="true">Close</button>
@@ -202,7 +214,7 @@
                             <asp:TextBox ID="InventorySingleInput" runat="server" CssClass="form-control"></asp:TextBox>
                             <br />
                             <br />
-                            <asp:Button ID="InventoryCustomerSubmitBtn" runat="server" Text="Submit" CssClass="btn btn-primary" OnClick="SingleInventorySubmitBtn_Click"/>
+                            <asp:Button ID="SingleInventorySubmitBtn" runat="server" Text="Submit" CssClass="btn btn-primary" OnClick="SingleInventorySubmitBtn_Click"/>
                         </div>
                         <div class="modal-footer">
                             <button class="btn btn-info" data-dismiss="modal" aria-hidden="true">Close</button>
@@ -226,7 +238,7 @@
                             <asp:TextBox ID="SupplierSingleInput" runat="server" CssClass="form-control"></asp:TextBox>
                             <br />
                             <br />
-                            <asp:Button ID="SupplierCustomerSubmitBtn" runat="server" Text="Submit" CssClass="btn btn-primary" OnClick="SingleSupplierSubmitBtn_Click"/>
+                            <asp:Button ID="SingleSupplierSubmitBtn" runat="server" Text="Submit" CssClass="btn btn-primary" OnClick="SingleSupplierSubmitBtn_Click"/>
                         </div>
                         <div class="modal-footer">
                             <button class="btn btn-info" data-dismiss="modal" aria-hidden="true">Close</button>

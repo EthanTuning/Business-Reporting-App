@@ -58,6 +58,24 @@ namespace Business_Reporting_App {
         protected global::System.Web.UI.WebControls.Button SupplierDataBtn;
         
         /// <summary>
+        /// RunTotalSalesBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button RunTotalSalesBtn;
+        
+        /// <summary>
+        /// RunAvgSalesBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button RunAvgSalesBtn;
+        
+        /// <summary>
         /// CustomerUpdatePanel control.
         /// </summary>
         /// <remarks>
@@ -337,13 +355,13 @@ namespace Business_Reporting_App {
         protected global::System.Web.UI.WebControls.TextBox InvoiceSingleInput;
         
         /// <summary>
-        /// InvoiceCustomerSubmitBtn control.
+        /// SingleInvoiceSubmitBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button InvoiceCustomerSubmitBtn;
+        protected global::System.Web.UI.WebControls.Button SingleInvoiceSubmitBtn;
         
         /// <summary>
         /// InventorySingleUpdatePanel control.
@@ -373,13 +391,13 @@ namespace Business_Reporting_App {
         protected global::System.Web.UI.WebControls.TextBox InventorySingleInput;
         
         /// <summary>
-        /// InventoryCustomerSubmitBtn control.
+        /// SingleInventorySubmitBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button InventoryCustomerSubmitBtn;
+        protected global::System.Web.UI.WebControls.Button SingleInventorySubmitBtn;
         
         /// <summary>
         /// SupplierSingleUpdatePanel control.
@@ -409,12 +427,12 @@ namespace Business_Reporting_App {
         protected global::System.Web.UI.WebControls.TextBox SupplierSingleInput;
         
         /// <summary>
-        /// SupplierCustomerSubmitBtn control.
+        /// SingleSupplierSubmitBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SupplierCustomerSubmitBtn;
+        protected global::System.Web.UI.WebControls.Button SingleSupplierSubmitBtn;
     }
 }
