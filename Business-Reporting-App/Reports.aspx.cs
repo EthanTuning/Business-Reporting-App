@@ -326,7 +326,7 @@ namespace Business_Reporting_App {
 
                     using (MySqlConnection connection = new MySqlConnection(connectionString)) {
 
-                        using (MySqlCommand command = new MySqlCommand("SELECT * FROM customer WHERE cust_number=" + CustomerSingleInput.Text)) {
+                        using (MySqlCommand command = new MySqlCommand("SELECT * FROM customer WHERE cust_number=" + CustomerSingleInput.Text)) {//easily sql injected
 
                             using (MySqlDataAdapter tempDataAdapter = new MySqlDataAdapter()) {
 
@@ -384,7 +384,7 @@ namespace Business_Reporting_App {
 
                     using (MySqlConnection connection = new MySqlConnection(connectionString)) {
 
-                        using (MySqlCommand command = new MySqlCommand("SELECT * FROM invoice WHERE invoice_num=" + InvoiceSingleInput.Text)) {
+                        using (MySqlCommand command = new MySqlCommand("SELECT * FROM invoice WHERE invoice_num=" + InvoiceSingleInput.Text)) {//easily sql injected
 
                             using (MySqlDataAdapter tempDataAdapter = new MySqlDataAdapter()) {
 
@@ -439,7 +439,7 @@ namespace Business_Reporting_App {
 
                     using (MySqlConnection connection = new MySqlConnection(connectionString)) {
 
-                        using (MySqlCommand command = new MySqlCommand("SELECT * FROM inventory WHERE sku=" + InventorySingleInput.Text)) {
+                        using (MySqlCommand command = new MySqlCommand("SELECT * FROM inventory WHERE sku=" + InventorySingleInput.Text)) {//easily sql injected
 
                             using (MySqlDataAdapter tempDataAdapter = new MySqlDataAdapter()) {
 
@@ -494,7 +494,7 @@ namespace Business_Reporting_App {
 
                     using (MySqlConnection connection = new MySqlConnection(connectionString)) {
 
-                        using (MySqlCommand command = new MySqlCommand("SELECT * FROM supplier WHERE supplier_id=" + SupplierSingleInput.Text)) {
+                        using (MySqlCommand command = new MySqlCommand("SELECT * FROM supplier WHERE supplier_id=" + SupplierSingleInput.Text)) {//easily sql injected
 
                             using (MySqlDataAdapter tempDataAdapter = new MySqlDataAdapter()) {
 
